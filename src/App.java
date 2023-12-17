@@ -19,7 +19,16 @@ public class App{
         // System.out.println("Your total meal price is: " + result);
         return result;
     }
+   
     public static double calculateEmployeeSalary(double hoursOfWork, double hourlyRate){
+        if(hoursOfWork < 0){
+            return -1;
+        }
+
+        if(hourlyRate < 0){
+            return -1;
+        }
+
         double payPerWeek = hoursOfWork * hourlyRate;
         double totalGrossSalary = payPerWeek * 52;
         return totalGrossSalary;
