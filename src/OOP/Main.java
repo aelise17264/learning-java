@@ -6,39 +6,58 @@ import java.util.Random;
 
 public class Main {
 
-    public static void addRandomNumber(ArrayList<Integer> list){
-        int originalSize = list.size();
-        Random random = new Random();
-        int n = random.nextInt(1000);
-
-        if(list instanceof ConditionArrayList){
-            ConditionArrayList conditionList = (ConditionArrayList) list;
-            while (!conditionList.isEligible(n)){
-                n = random.nextInt(1000);
-            }
-        }
-        list.add(n);
-    }
+   
     public static void main(String[] args){
+        Contact contactOne = new Contact("Sally", new PhoneNumber("2637263737"));
 
-        Predicate<Integer> isDivisibleByThree = n -> Math.abs(n) % 3 == 0;
-        ConditionArrayList divisibleByThreeList = new ConditionArrayList(isDivisibleByThree);
+        Contact contactTwo = new Contact("Maggie Smith", new PhoneNumber(41, "9384713401"));
 
-        ConditionArrayList divisibleByThreeList2 = new ConditionArrayList(isDivisibleByThree, 1, 2, 3, 4, 5, 6, 9);
-       System.out.println(divisibleByThreeList2);
-        ArrayList<Integer> numsList = new ArrayList<>();
-        numsList.add(1);        
-        numsList.add(4);
-        numsList.add(3);
-        numsList.add(6);
-        numsList.add(13);
+        Contact contactThree = new Contact("Roger Williams", new PhoneNumber("448474734929"));
 
-        ConditionArrayList divisibleByThreeList3 = new ConditionArrayList(isDivisibleByThree, numsList);
-        System.out.println(divisibleByThreeList3);
-    }
+        Contact contactFour = new Contact("David Jones", "david_jones@email.com");
+
+        Contact contactFive = new Contact("Sarah Brown",new PhoneNumber("2029384982"), "sarahb@email.com");
+
+        System.out.println(contactOne);        
+        System.out.println(contactTwo);
+        System.out.println(contactThree);
+        System.out.println(contactFour);
+        System.out.println(contactFive);
+
+
+}
 }
 
 //POLYMORPHISM
+//  public static void addRandomNumber(ArrayList<Integer> list){
+//         int originalSize = list.size();
+//         Random random = new Random();
+//         int n = random.nextInt(1000);
+
+//         if(list instanceof ConditionArrayList){
+//             ConditionArrayList conditionList = (ConditionArrayList) list;
+//             while (!conditionList.isEligible(n)){
+//                 n = random.nextInt(1000);
+//             }
+//         }
+//         list.add(n);
+//     }
+    
+//         Predicate<Integer> isDivisibleByThree = n -> Math.abs(n) % 3 == 0;
+//         ConditionArrayList divisibleByThreeList = new ConditionArrayList(isDivisibleByThree);
+
+//         ConditionArrayList divisibleByThreeList2 = new ConditionArrayList(isDivisibleByThree, 1, 2, 3, 4, 5, 6, 9);
+//        System.out.println(divisibleByThreeList2);
+//         ArrayList<Integer> numsList = new ArrayList<>();
+//         numsList.add(1);        
+//         numsList.add(4);
+//         numsList.add(3);
+//         numsList.add(6);
+//         numsList.add(13);
+
+//         ConditionArrayList divisibleByThreeList3 = new ConditionArrayList(isDivisibleByThree, numsList);
+//         System.out.println(divisibleByThreeList3);
+//     }
 //  ConditionArrayList oddListy = new ConditionArrayList(
 //             n -> Math.abs(n) % 2 == 1);
 //         oddListy.add(1);
