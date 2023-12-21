@@ -2,20 +2,16 @@ package OOP;
 
 import java.sql.Timestamp;
 
-public class PasswordChangeEvent implements Event{
+public class PasswordChangeEvent extends AbstractEvent {
     
-    private final Long createdTimeStamp;
-    private final String id;
+    // private final Long createdTimeStamp;
+    // private final String id;
 
     public PasswordChangeEvent(String id){
-        this.id = id;
-        this.createdTimeStamp = new Timestamp(System.currentTimeMillis()).getTime();
+        super(id);
     }
 
-    @Override
-    public Long getTimeStamp(){
-        return this.createdTimeStamp;
-    }
+ 
 
     @Override
     public void process(){

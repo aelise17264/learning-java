@@ -10,9 +10,10 @@ public class Main {
 
     //throws IOException
     public static void main(String[] args) {
-        PasswordChangeEvent eventOne = new PasswordChangeEvent("321928399");       
-        PasswordChangeEvent eventTwo = new PasswordChangeEvent("1936428194");
-        PasswordChangeEvent eventThree = new PasswordChangeEvent("93827451");
+        
+PasswordChangeEvent eventOne = new PasswordChangeEvent("321928399");       
+AccountTransferEvent eventTwo = new AccountTransferEvent("1936428194");
+MissedPaymentEvent eventThree = new MissedPaymentEvent("93827451");
 
         Event[] events = {eventOne, eventTwo, eventThree};
 
@@ -21,11 +22,13 @@ public class Main {
             e.process();
             System.out.println();
         }
-
 }
 }
 
 //ABSTRACTION
+
+
+
       // //needed entire relative file path
         // DigitsOnlyFileReader digitsOnlyFileReader = new DigitsOnlyFileReader("src\\OOP\\message.txt");
 
