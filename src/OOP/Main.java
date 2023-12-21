@@ -1,34 +1,56 @@
 package OOP;
-import java.util.Stack;
-import java.util.function.Predicate;
-import java.util.ArrayList;
-import java.util.Random;
+// import java.util.Stack;
+// import java.util.function.Predicate;
+// import java.io.File;
+// import java.io.IOException;
+// import java.util.ArrayList;
+// import java.util.Random;
 
 public class Main {
 
-   
-    public static void main(String[] args){
-        Contact contactOne = new Contact("Sally", new PhoneNumber("2637263737"));
+    //throws IOException
+    public static void main(String[] args) {
+        PasswordChangeEvent eventOne = new PasswordChangeEvent("321928399");       
+        PasswordChangeEvent eventTwo = new PasswordChangeEvent("1936428194");
+        PasswordChangeEvent eventThree = new PasswordChangeEvent("93827451");
 
-        Contact contactTwo = new Contact("Maggie Smith", new PhoneNumber(41, "9384713401"));
+        Event[] events = {eventOne, eventTwo, eventThree};
 
-        Contact contactThree = new Contact("Roger Williams", new PhoneNumber("448474734929"));
-
-        Contact contactFour = new Contact("David Jones", "david_jones@email.com");
-
-        Contact contactFive = new Contact("Sarah Brown",new PhoneNumber("2029384982"), "sarahb@email.com");
-
-        System.out.println(contactOne);        
-        System.out.println(contactTwo);
-        System.out.println(contactThree);
-        System.out.println(contactFour);
-        System.out.println(contactFive);
-
+        for(Event e : events){
+            System.out.println(e.getTimeStamp());
+            e.process();
+            System.out.println();
+        }
 
 }
 }
+
+//ABSTRACTION
+      // //needed entire relative file path
+        // DigitsOnlyFileReader digitsOnlyFileReader = new DigitsOnlyFileReader("src\\OOP\\message.txt");
+
+        // System.out.println(digitsOnlyFileReader.readFile());
+    
+        // System.out.println(digitsOnlyFileReader.getPath());
+
 
 //POLYMORPHISM
+// Contact contactOne = new Contact("Sally", new PhoneNumber("2637263737"));
+
+        // Contact contactTwo = new Contact("Maggie Smith", new PhoneNumber(41, "9384713401"));
+
+        // Contact contactThree = new Contact("Roger Williams", new PhoneNumber("448474734929"));
+
+        // Contact contactFour = new Contact("David Jones", "david_jones@email.com");
+
+        // Contact contactFive = new Contact("Sarah Brown",new PhoneNumber("2029384982"), "sarahb@email.com");
+
+        // System.out.println(contactOne);        
+        // System.out.println(contactTwo);
+        // System.out.println(contactThree);
+        // System.out.println(contactFour);
+        // System.out.println(contactFive);
+
 //  public static void addRandomNumber(ArrayList<Integer> list){
 //         int originalSize = list.size();
 //         Random random = new Random();
